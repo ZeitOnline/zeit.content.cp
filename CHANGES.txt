@@ -2,7 +2,7 @@ zeit.content.cp changes
 =======================
 
 
-2.11.2 (unreleased)
+2.11.2 (2016-01-20)
 -------------------
 
 - Replace gocept.cache.method with dogpile.cache (ZON-2576).
