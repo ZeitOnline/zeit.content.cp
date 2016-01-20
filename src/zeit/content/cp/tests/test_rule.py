@@ -2,10 +2,10 @@
 # See also LICENSE.txt
 
 from __future__ import with_statement
-from zeit.edit.rule import Rule
 from zeit.edit.interfaces import IRuleGlobs
-import gocept.cache
+from zeit.edit.rule import Rule
 import pkg_resources
+import pyramid_dogpile_cache2
 import zeit.cms.interfaces
 import zeit.content.cp.centerpage
 import zeit.content.cp.testing
@@ -121,7 +121,7 @@ class RulesManagerTest(zeit.content.cp.testing.FunctionalTestCase):
         zope.app.appsetup.product._configs['zeit.edit']['rules-url'] = (
             'file://' + pkg_resources.resource_filename(
                 'zeit.content.cp.tests.fixtures', filename))
-        gocept.cache.method.clear()
+        pyramid_dogpile_cache2.clear()
         self.rm._rules[:] = []
 
     def test_valid_rules_file_should_be_loaded(self):

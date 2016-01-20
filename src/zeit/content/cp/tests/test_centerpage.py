@@ -4,10 +4,10 @@
 
 from xml_compare import xml_compare
 from zeit.cms.checkout.helper import checked_out
-import gocept.cache.method
 import lovely.remotetask.interfaces
 import lxml.etree
 import pkg_resources
+import pyramid_dogpile_cache2
 import transaction
 import zeit.cms.repository.interfaces
 import zeit.cms.testcontenttype.testcontenttype
@@ -26,7 +26,7 @@ class TestCenterPageRSSFeed(zeit.content.cp.testing.FunctionalTestCase):
         super(TestCenterPageRSSFeed, self).setUp()
         # clear rules cache so we get the empty ruleset, so we can publish
         # undisturbed
-        gocept.cache.method.clear()
+        pyramid_dogpile_cache2.clear()
 
         zope.app.appsetup.product.getProductConfiguration(
             'zeit.edit')['rules-url'] = 'file://%s' % (
