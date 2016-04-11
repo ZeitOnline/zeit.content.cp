@@ -5,7 +5,7 @@ zeit.content.cp changes
 2.11.3 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Remove teasered content from references index (ZON-2764).
 
 
 2.11.2 (2016-01-20)

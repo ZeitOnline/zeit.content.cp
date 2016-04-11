@@ -100,27 +100,3 @@ Changing the free teaser is still possible:
       <span class="uniqueId">http://teaser.vivi.zeit.de/http://xml.zeit.de/online/2007/01/island#cb53941e-dff7-4bd6-b0c6-eea584f27c65</span>
     </div>
 ...
-
-The original object still notes that it is referenced by the CP.
-
->>> browser.open('@@edit.html')
->>> browser.getLink('Checkin').click()
->>> browser.open('http://localhost/++skin++cms/repository/testcontent')
->>> browser.getLink('References').click()
->>> print browser.contents
-<...
-    <h1>Referenced by</h1>...
-    ...<a.../repository/online/2007/01/island">Auf den Spuren der Elfen</a>...
-
-
-When the original object is changed, we receive a warning about the reference:
-
->>> browser.getLink('Checkout').click()
->>> browser.getControl('Title').value = 'New title'
->>> browser.getControl('Year').value = '2010'
->>> browser.getControl('Ressort').displayValue = ['Deutschland']
->>> browser.getControl(name='form.authors.0.').value = 'foo'
->>> browser.getControl('Apply').click()
->>> print browser.contents
-<...<li..."http://xml.zeit.de/testcontent" is referenced by a free teaser
-in "http://xml.zeit.de/online/2007/01/island"</li>...
