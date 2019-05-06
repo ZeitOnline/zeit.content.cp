@@ -1,7 +1,14 @@
 zeit.content.cp changes
 =======================
 
-3.29.2 (unreleased)
+
+3.29.3 (unreleased)
+-------------------
+
+ - Nothing changed yet
+
+
+3.29.2 (2019-05-06)
 -------------------
 
 - FIX: Let xml.zeit.de render some rss link objects
